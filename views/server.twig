@@ -1,0 +1,43 @@
+{% extends 'layout.twig' %}
+{% block title %}Startseite{% endblock %}
+{% block user %}
+    {% if user %}
+        Logged as
+        {{ user.username }}&nbsp; | &nbsp;
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Einloggen</a>
+        |
+        <a href="/register">Registrieren</a>
+    {% endif %}
+
+{% endblock %}
+{% block body %}
+    <div class="col-xs-12">
+        <div class="panel panel-warning">
+            <div class="panel-body" style="padding: 3em;">
+                <center>
+                    <h1>{{ server.name }}</h1>
+                    <h3>
+                        <i class="text-primary">{{ server.apiurl }}</i>
+                    </h3>
+                    <ul>
+                        {% for mod in server.modules %}
+                            <li style="list-style: none;">
+                                <a href="/{{ id }}/{{ servername }}/{{ loop.index -1 }}/{{ mod.slug }}">
+                                    <h4>{{ mod.name }}</h4>
+                                </a>
+
+                                <br/>
+                                <h5>{{ mod.description }}</h5>
+                            </li>
+                            {% if not loop.last %}
+                                <hr/>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </center>
+            </div>
+        </div>
+    </div>
+{% endblock %}

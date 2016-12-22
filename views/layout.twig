@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+            | Hausautomatisierung</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/bootstrap-material-design.min.css"/>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-xs-12 alert alert-warning">
+                <center>
+                    <h2>Hausautomatiesierung WS 2016/17</h2>
+                    <a href="/">Zur Startseite
+                    </a>
+                    {% block user %}{% endblock %}
+                </center>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

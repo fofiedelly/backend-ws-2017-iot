@@ -1,0 +1,41 @@
+{% extends 'layout.twig' %}
+{% block title %}Registrierung{% endblock %}
+{% block body %}
+    <div class="col-xs-3"></div>
+    <div class="col-xs-6">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <center>
+                    Registrierung Seite
+                </center>
+            </div>
+            <div class="panel-body" style="padding: 3em;">
+                <form role="form" action="/register" method="post" style="">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-2 control-label">Username</label>
+                        <div class="col-md-10">
+                            <input type="text" name="username" placeholder="Enter Username" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-md-2 control-label">Passwort</label>
+                        <div class="col-md-10">
+                            <input type="password" name="password" placeholder="Password" class="form-control"/>
+                        </div>
+
+                    </div>
+                    <center>
+                        <button type="submit" class="btn btn-success btn-raised">Registrieren</button>&nbsp;<a href="/">
+                            <button type="button" class="btn btn-default btn-raised">Abbrechen</button>
+                        </a>
+                    </center>
+                    <br>
+                    <center>
+                        <a href="/login">Zum login</a>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-4"></div>
+{% endblock %}
