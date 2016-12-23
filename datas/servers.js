@@ -14,7 +14,16 @@ var servers = [{
 }, {
     "url": "/zimmer-fofie",
     "apiurl": "http://wtf.wtf",
-    "name": "Zimmer Fofie @home"
+    "name": "Zimmer Fofie @home",
+    "modules": [{
+        "name": "Licht remote seteurung",
+        "description": "lorem ipsum .......",
+        "slug": "light-remote-control"
+    }, {
+        "name": "Heizugn remote seteurung",
+        "description": "lorem ipsum .......",
+        "slug": "temperature-remote-control"
+    }]
 }];
 
 module.exports = servers;

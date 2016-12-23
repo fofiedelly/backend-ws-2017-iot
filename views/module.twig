@@ -1,0 +1,29 @@
+{% extends 'layout.twig' %}
+{% block title %}Startseite{% endblock %}
+{% block user %}
+    {% if user %}
+        Logged as
+        {{ user.username }}&nbsp; | &nbsp;
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Einloggen</a>
+        |
+        <a href="/register">Registrieren</a>
+    {% endif %}
+
+{% endblock %}
+{% block body %}
+    <div class="col-xs-12">
+        <div class="panel panel-warning">
+            <div class="panel-body" style="padding: 3em;">
+                <center>
+                    <h1>{{ module.name }}</h1>
+                    <h3>
+                        {{ module.description }}
+                    </h3>
+                    <ul></ul>
+                </center>
+            </div>
+        </div>
+    </div>
+{% endblock %}

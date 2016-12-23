@@ -25,7 +25,20 @@ router.get('/:id/:server', function(req, res, next) {
 });
 
 router.get('/:id/:server/:moduleid/:modulename', function(req, res, next) {
-
+    if (!req.user) {
+        res.redirect("/login");
+    } else {
+        var id = Number(req.params.id);
+        var server = servers[id - 1];
+        var moduleId = Number(req.params.moduleid);
+        var module = server.modules[moduleId];
+        res.render('module', {
+            user: req.user,
+            id: id,
+            module: module,
+            server: server
+        });
+    }
 });
 
 module.exports = router;
