@@ -23,7 +23,9 @@
                             {{ module.description }}
                         </h3>
                         <div class="col-xs-12" ng-style="style" style="height: 50px; background-color: #000; "></div>
-
+                        <center>
+                            Brightness: [[ lightValue ]]
+                        </center>
                         <br/><br/>
                         {% if module.slug == 'light-remote-control' %}
                             <div ng-if="!an">
@@ -33,26 +35,25 @@
                                         <strong>Info!</strong>
                                         Das Licht in dem Raum "{{ module.name }}" ist jetzt aus!
                                     </div>
-
-                                </div><br/><br/>
-                                <button class="btn btn-warning btn-raised">
-                                    <i class="fa fa-bolt" aria-hidden="true"></i>
-                                    Licht Ausmachen</button>
+                                    <br/><br/>
+                                </div>
                             </div>
+
                             <div ng-if="an">
                                 <div class="col-xs-12 alert alert-dismissible alert-success">
                                     <div class="">
                                         <strong>Info!</strong>
                                         Das Licht in dem Raum "{{ module.name }}" ist jetzt an!
                                     </div>
-                                    <button class="btn btn-success btn-raised">
-                                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                        Licht Anmachen</button>
-                                </div>
+
+                                </div><br/><br/>
                             </div>
-
-                            [[ getBrightnessStatus("{{ server.apiurl }}") ]]
-
+                            <button class="btn btn-warning btn-raised" ng-if="an">
+                                <i class="fa fa-bolt" aria-hidden="true"></i>
+                                Licht Ausmachen</button>
+                            <button class="btn btn-success btn-raised" ng-if="!an">
+                                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                Licht Anmachen</button>
                         {% endif %}
                         <ul></ul>
                     </center>
