@@ -22,25 +22,37 @@
                         <h3>
                             {{ module.description }}
                         </h3>
+                        <div class="col-xs-12" ng-style="style" style="height: 50px; background-color: #000; "></div>
+
+                        <br/><br/>
                         {% if module.slug == 'light-remote-control' %}
-                            <div class="alert alert-dismissible alert-success">
-                                <button type="button" class="close" data-dismiss="alert">×</button>
-                                <strong>Info!</strong>
-                                Das Licht in dem Raum "{{ module.name }}" ist jetzt an!
-                                <a href="javascript:void(0)" class="alert-link">this important alert message</a>.
+                            <div ng-if="!an">
+
+                                <div class="col-xs-12 alert alert-dismissible alert-warning">
+                                    <div class="">
+                                        <strong>Info!</strong>
+                                        Das Licht in dem Raum "{{ module.name }}" ist jetzt aus!
+                                    </div>
+
+                                </div><br/><br/>
+                                <button class="btn btn-warning btn-raised">
+                                    <i class="fa fa-bolt" aria-hidden="true"></i>
+                                    Licht Ausmachen</button>
                             </div>
-                            <div class="alert alert-dismissible alert-warning">
-                                <button type="button" class="close" data-dismiss="alert">×</button>
-                                <strong>Info!</strong>
-                                Das Licht in dem Raum "{{ module.name }}" ist jetzt an!
-                                <a href="javascript:void(0)" class="alert-link">this important alert message</a>.
+                            <div ng-if="an">
+                                <div class="col-xs-12 alert alert-dismissible alert-success">
+                                    <div class="">
+                                        <strong>Info!</strong>
+                                        Das Licht in dem Raum "{{ module.name }}" ist jetzt an!
+                                    </div>
+                                    <button class="btn btn-success btn-raised">
+                                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                        Licht Anmachen</button>
+                                </div>
                             </div>
-                            <button class="btn btn-success btn-raised">
-                                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                Licht Anmachen</button>
-                            <button class="btn btn-warning btn-raised">
-                                <i class="fa fa-bolt" aria-hidden="true"></i>
-                                Licht Ausmachen</button>
+
+                            [[ getBrightnessStatus("{{ server.apiurl }}") ]]
+
                         {% endif %}
                         <ul></ul>
                     </center>
