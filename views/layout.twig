@@ -10,7 +10,12 @@
         <link rel="stylesheet" href="/stylesheets/bootstrap-material-design.min.css"/>
         <link rel="stylesheet" href="/javascripts/angular-loading-bar/build/loading-bar.min.css"/>
         <link rel="stylesheet" href="/javascripts/angular-ui-notification/dist/angular-ui-notification.min.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/nouislider.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.14/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+        <script src="/javascripts/nouislider.min.js"></script>
+        <script src="/javascripts/angular-chart.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="/javascripts/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
         <script type="text/javascript" src="/javascripts/angular-loading-bar/build/loading-bar.min.js"></script>
         <script type="text/javascript" src="/javascripts/HausCtrl.js"></script>
@@ -22,7 +27,11 @@
                     <h2>Hausautomatiesierung WS 2016/17</h2>
                     <a href="/">Zur Startseite
                     </a>
-                    {% block user %}{% endblock %}
+                    <div class="sr-only">
+
+                        {% block user %}{% endblock %}
+
+                    </div>
                 </center>
             </div>
         </div>
@@ -35,4 +44,30 @@
         </div>
 
     </body>
+<script>
+    var range = document.getElementById('range');
+
+    range.style.height = '400px';
+    range.style.margin = '0 auto 30px';
+
+    noUiSlider.create(range, {
+        start: 15,
+        margin: 300, // Handles must be at least 300 apart
+        connect: true, // Display a colored bar between the handles
+        direction: 'ltr', // Put '0' at the bottom of the slider
+        orientation: 'horizontal', // Orient the slider vertically
+        behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+        step: 5,
+        tooltips: true,
+        range: {
+            'min': 0,
+            'max': 30
+        },
+        pips: { // Show a scale with the slider
+            mode: 'steps',
+            stepped: true,
+            density: 4
+        }
+    });
+</script>
 </html>

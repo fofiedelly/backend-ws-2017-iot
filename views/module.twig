@@ -22,12 +22,16 @@
                         <h3>
                             {{ module.description }}
                         </h3>
-                        <div class="col-xs-12" ng-style="style" style="height: 50px; background-color: #000; "></div>
-                        <center>
-                            Brightness: [[ lightValue ]]
-                        </center>
+
                         <br/><br/>
                         {% if module.slug == 'light-remote-control' %}
+                            <div class="col-xs-12" ng-style="style"
+                                 style="height: 50px; background-color: #000; "></div>
+                            <center>
+                                <h1>
+                                    Brightness: [[ lightValue ]]
+                                </h1>
+                            </center>
                             <div ng-if="!an">
 
                                 <div class="col-xs-12 alert alert-dismissible alert-warning">
@@ -39,21 +43,39 @@
                                 </div>
                             </div>
 
-                            <div ng-if="an">
+                            <div ng-if="an" ng-if="false">
                                 <div class="col-xs-12 alert alert-dismissible alert-success">
                                     <div class="">
                                         <strong>Info!</strong>
                                         Das Licht in dem Raum "{{ module.name }}" ist jetzt an!
                                     </div>
 
-                                </div><br/><br/>
+                                </div>
+                                <br/><br/>
                             </div>
                             <button class="btn btn-warning btn-raised" ng-if="an">
+                                <i class="fa fa-bolt" aria-hidden="true"></i>&nbsp; Licht einschalten/ausschalten &nbsp;
                                 <i class="fa fa-bolt" aria-hidden="true"></i>
-                                Licht Ausmachen</button>
+                            </button>
                             <button class="btn btn-success btn-raised" ng-if="!an">
                                 <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-                                Licht Anmachen</button>
+                                Licht Anmachen
+                            </button>
+                        {% elseif module.slug == 'temperature-remote-control' %}
+                            <div class="col-xs-12">
+                                <input
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        step="1"
+                                        data-buffer="60"/>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <canvas id="line" class="chart chart-bar" chart-data="data"
+                                        chart-labels="labels" chart-options="options" chart-click="onClick">
+                                </canvas>
+                            </div>
                         {% endif %}
                         <ul></ul>
                     </center>
