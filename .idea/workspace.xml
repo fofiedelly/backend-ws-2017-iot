@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76bd1bb9-ce26-463f-94ac-3cf811ed17cd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/HausCtrl.js" afterPath="$PROJECT_DIR$/public/javascripts/HausCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.twig" afterPath="$PROJECT_DIR$/views/layout.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.twig" afterPath="$PROJECT_DIR$/views/login.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/module.twig" afterPath="$PROJECT_DIR$/views/module.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,20 +50,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layout.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/layout.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="21" column="111" lean-forward="false" selection-start-line="21" selection-start-column="111" selection-end-line="21" selection-end-column="111" />
               <folding>
-                <element signature="e#1869#1875#0#HTML" expanded="true" />
-                <element signature="e#1875#1881#0#HTML" expanded="true" />
+                <element signature="e#1981#1987#0#HTML" expanded="true" />
+                <element signature="e#1987#1993#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HausCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HausCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/HausCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -98,8 +94,8 @@
         <option value="$PROJECT_DIR$/datas/servers.js" />
         <option value="$PROJECT_DIR$/views/login.twig" />
         <option value="$PROJECT_DIR$/views/module.twig" />
-        <option value="$PROJECT_DIR$/views/layout.twig" />
         <option value="$PROJECT_DIR$/public/javascripts/HausCtrl.js" />
+        <option value="$PROJECT_DIR$/views/layout.twig" />
       </list>
     </option>
   </component>
@@ -286,12 +282,12 @@
       <updated>1484522608867</updated>
       <workItem from="1484522610929" duration="30000" />
       <workItem from="1484522659684" duration="3946000" />
-      <workItem from="1484563352358" duration="3002000" />
+      <workItem from="1484563352358" duration="3459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6978000" />
+    <option name="totallyTimeSpent" value="7435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
@@ -366,17 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#1869#1875#0#HTML" expanded="true" />
-            <element signature="e#1875#1881#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datas/servers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -390,6 +375,17 @@
         <state relative-caret-position="345">
           <caret line="79" column="39" lean-forward="false" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="111" lean-forward="false" selection-start-line="21" selection-start-column="111" selection-end-line="21" selection-end-column="111" />
+          <folding>
+            <element signature="e#1981#1987#0#HTML" expanded="true" />
+            <element signature="e#1987#1993#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
