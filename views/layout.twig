@@ -27,6 +27,10 @@
                     <h2>Hausautomatiesierung WS 2016/17</h2>
                     <a href="/">Zur Startseite
                     </a>
+                    &nbsp;&nbsp;
+                    <a href="/logout">
+                        Logout
+                    </a>
                     <div class="sr-only">
 
                         {% block user %}{% endblock %}
@@ -47,13 +51,12 @@
 <script>
     var range = document.getElementById('range');
 
-    range.style.height = '400px';
-    range.style.margin = '0 auto 30px';
 
     noUiSlider.create(range, {
         start: 15,
         margin: 300, // Handles must be at least 300 apart
         connect: true, // Display a colored bar between the handles
+        height: 20,
         direction: 'ltr', // Put '0' at the bottom of the slider
         orientation: 'horizontal', // Orient the slider vertically
         behaviour: 'tap-drag', // Move handle on tap, bar is draggable

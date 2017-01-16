@@ -24,13 +24,32 @@ angular.module("haus", ['ui-notification', 'angular-loading-bar', 'chart.js'])
     })
 
     .controller('HausCtrl', function($scope, $http, Notification, $timeout, $rootScope, $interval) {
-
+        $scope.licht = false;
         getValue();
         $scope.an = true;
         /**
          ** Ask the py Via an httpCall the status of the lamp
          **/
-        $interval(getValue, 60000);
+        $interval(getValue, 9000);
+
+        $scope.switchLight = function() {
+            var uri = $scope.licht ? "/licht/aus": "/licht/an";
+            $http({
+                method: 'GET',
+                url: $rootScope.apiUrl + uri
+            }).then(function successCallback(response) {
+                Notification.success({
+                    message: 'Aktion erfolgsreich',
+                    title: 'Erfolg'
+                });
+                $scope.licht = !$scope.licht;
+            },function errorCallback(response) {
+                Notification.error({
+                    message: 'Server unereichbar',
+                    title: 'Error'
+                });
+            });
+        };
 
         function getValue() {
             $http({
@@ -38,7 +57,7 @@ angular.module("haus", ['ui-notification', 'angular-loading-bar', 'chart.js'])
                 url: $rootScope.apiUrl + "/status/photo"
             }).then(function successCallback(response) {
                 var value = Number(response.data);
-                $scope.lightValue = value;
+                $scope.lightValue = parseInt(Number(value * 0.13));
                 $scope.style = {
                     "opacity": $scope.lightValue / 100
                 };
@@ -58,7 +77,7 @@ angular.module("haus", ['ui-notification', 'angular-loading-bar', 'chart.js'])
         $scope.getBrightnessStatus = function(apiUrl) {
             console.log(apiUrl);
         };
-        $scope.data =   [9,-2,-2,9,9,19,20];
+        $scope.data =   [9,-2,-2,9,9,19];
         $scope.labels = ["01h", "03h", "06h", "08h", "12h", "14h", "16h", "19h", "21h"];
         $scope.options = {
             scales: {
